@@ -20,7 +20,10 @@ f.parentNode.insertBefore(j,f);
 </script>
 <!-- End Google Tag Manager -->
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  
 
   
 </head>
@@ -36,35 +39,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 
   <main class="page">
 
-    <!-- PROFILE -->
-    <section class="profile">
+    <!-- MODULES -->
+    <section class="modules">
+      
+<section class="profile">
 
   <div class="avatar">
     <img src="assets/images/profile.jpg" alt="Daniela Catering">
+    
     <span class="avatar-badge">
-  <img src="assets/images/badge-whatsapp.svg" alt="WhatsApp">
-</span>
+      <img src="assets/images/badge-whatsapp.svg" alt="WhatsApp">
+    </span>
+    
   </div>
 
+  <h1 class="profile-name">Daniela Catering</h1>
+  <p class="profile-description">💻✨ Experiencias Tech & Catering Corporativo |QR 📲 · NFC · Video Mapping 🎥 · Assets digitales|Hot dogs 🌭 | Menú 4 tiempos 🍽️ | Pastelería creativa 🎂🚀 Eventos interactivos que se viven y se saborean</p>
 
-      <h1 class="profile-name">Daniela Catering</h1>
-      <p class="profile-description">💻✨ Experiencias Tech & Catering Corporativo |QR 📲 · NFC · Video Mapping 🎥 · Assets digitales|Hot dogs 🌭 | Menú 4 tiempos 🍽️ | Pastelería creativa 🎂🚀 Eventos interactivos que se viven y se saborean</p>
+</section>
+
+
+<section class="lead-form">
+
+  <form id="leadForm" class="lead-form-card">
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Tu nombre"
+      required
+    >
+
+    <input
+      type="tel"
+      name="whatsapp"
+      placeholder="WhatsApp"
+      required
+    >
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Correo (opcional)"
+    >
+
+    <button type="submit" class="btn primary">
+      Enviar datos
+    </button>
+
+  </form>
+
+  <!-- BOTÓN DESBLOQUEADO DESPUÉS DEL FORM -->
+
+  <div id="vcardUnlock" style="display:none">
+
+    <a
+      class="btn btn-contact"
+      href="assets/files/contacto.vcf"
+      download
+    >
+      Guardar contacto de Daniela Catering
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="buttons">
+<a href="https://wa.me/5215521512563" class="btn primary" target="_blank">Chat en WhatsApp</a><a href="https://lasanadomicilio.com/" class="btn secondary" target="_blank">Ver menú</a><a href="https://wa.me/525521512563?text=Quiero%20enviar%20arreglo%20de%20flores" class="btn secondary" target="_blank">Quiero enviar arreglo de flores</a><a href="https://wa.me/525521512563?text=Quiero%20un%20arreglo%20de%20globos" class="btn secondary" target="_blank">Quiero un arreglo de globos</a>
+</section>
 
     </section>
 
-    <!-- BUTTONS -->
-    <section class="buttons">
-      <a href="https://wa.me/5215521512563" class="btn primary" target="_blank" >Chat en WhatsApp</a>
-<a href="https://lasanadomicilio.com/" class="btn secondary" target="_blank" >Ver menú</a>
-<a href="https://wa.me/525521512563?text=Quiero%20enviar%20arreglo%20de%20flores" class="btn secondary" target="_blank" >Quiero enviar arreglo de flores</a>
-<a href="https://wa.me/525521512563?text=Quiero%20un%20arreglo%20de%20globos" class="btn secondary" target="_blank" >Quiero un arreglo de globos</a>
-    </section>
-
-    <!-- FOOTER (vacío por ahora, sin placeholder) -->
     <footer class="footer"></footer>
 
   </main>
 
   
+
+  <script src="../assets/js/lead-form.js"></script>
+
 </body>
 </html>
