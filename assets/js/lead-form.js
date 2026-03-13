@@ -108,7 +108,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
       e.preventDefault()
 
-      window.location.href = this.getAttribute("href")
+      const vcardUrl = this.getAttribute("href")
+
+      window.open(vcardUrl, "_blank")
 
     })
 
