@@ -88,11 +88,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     unlock.style.display = "block"
 
-    setTimeout(() => {
-
-      unlock.querySelector("a").click()
-
-    }, 500)
+    
 
   })
 
