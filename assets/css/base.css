@@ -152,7 +152,7 @@ body {
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
 .btn {
@@ -176,9 +176,17 @@ body {
 /* ---------- PRIMARY ---------- */
 
 .btn.primary {
+
   background: var(--accent);
+
   color: var(--accent-contrast);
+
+  font-size: 1rem;
+
+  letter-spacing: 0.2px;
+
 }
+
 
 .btn.primary:hover {
   background: #1e40af;
@@ -194,6 +202,16 @@ body {
 .btn.secondary:hover {
   background: #e2e8f0;
 }
+
+
+.btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+
+}
+
 
 /* ---------- ACTIVE ---------- */
 
@@ -279,5 +297,61 @@ body.layout-hero .profile {
   50% { transform: scale(1.05); }
 
   100% { transform: scale(1); }
+
+}
+
+/* =====================================================
+   LEAD FORM PREMIUM
+   ===================================================== */
+
+.lead-form-card {
+
+  margin-top: 18px;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  background: rgba(15, 23, 42, 0.04);
+
+  backdrop-filter: blur(6px);
+
+}
+
+/* INPUTS */
+
+.lead-form-card input {
+
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(15,23,42,0.12);
+
+  background: rgba(255,255,255,0.85);
+
+  color: var(--text-main);
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+
+}
+
+.lead-form-card input::placeholder {
+
+  color: var(--text-muted);
+
+}
+
+.lead-form-card input:focus {
+
+  outline: none;
+
+  border-color: var(--accent);
+
+  box-shadow: 0 0 0 2px rgba(30,58,138,0.15);
 
 }
