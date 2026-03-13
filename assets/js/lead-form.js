@@ -88,6 +88,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
     unlock.style.display = "block"
 
+    // mensaje para el usuario
+
+    const message = document.createElement("p")
+
+    message.textContent = "✔ Ahora guarda mi contacto en tu teléfono"
+
+    message.style.marginTop = "16px"
+    message.style.fontWeight = "600"
+    message.style.color = "#16a34a"
+
+    unlock.prepend(message)
+
+    // forzar apertura del vCard
+
+    const contactBtn = unlock.querySelector("a")
+
+    contactBtn.addEventListener("click", function(e){
+
+      e.preventDefault()
+
+      window.location.href = this.getAttribute("href")
+
+    })
+
     
 
   })
