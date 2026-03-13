@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // =====================================
 
     const payload = {
-      slug: window.location.pathname.split("/")[1],
+      slug: document.body.dataset.slug,
       name: formData.get("name"),
       whatsapp: formData.get("whatsapp"),
       email: formData.get("email") || null
