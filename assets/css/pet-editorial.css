@@ -1,0 +1,458 @@
+:root {
+  --pet-ink: #0a0f17;
+  --pet-panel: #101722;
+  --pet-panel-soft: #17202d;
+  --pet-gold: #c9a354;
+  --pet-ivory: #f4efe5;
+  --pet-muted: #b7bec7;
+}
+
+body:has(.pet-editorial) {
+  background: #e8e5df;
+}
+
+body:has(.pet-editorial) .page {
+  max-width: 560px;
+  padding: 0 0 96px;
+  text-align: left;
+}
+
+body:has(.pet-editorial) .modules {
+  gap: 0;
+}
+
+body:has(.pet-editorial) > .page > .footer {
+  display: none;
+}
+
+.pet-editorial {
+  background: var(--pet-ink);
+  color: var(--pet-ivory);
+  min-height: 100vh;
+}
+
+.pet-hero {
+  min-height: min(760px, 88vh);
+  overflow: hidden;
+  position: relative;
+}
+
+.pet-hero-image,
+.pet-hero-shade {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.pet-hero-image {
+  object-fit: cover;
+  object-position: 31% top;
+}
+
+.pet-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(10, 15, 23, 0.08), rgba(10, 15, 23, 0.18) 45%, rgba(10, 15, 23, 0.96)),
+    linear-gradient(90deg, transparent 55%, rgba(10, 15, 23, 0.5));
+}
+
+.pet-hero-copy {
+  bottom: 0;
+  display: grid;
+  gap: 10px;
+  left: 0;
+  padding: 32px 24px 26px;
+  position: absolute;
+  right: 0;
+}
+
+.pet-kicker {
+  color: var(--pet-gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pet-hero h1 {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.92;
+  margin: 0;
+}
+
+.pet-summary,
+.pet-quote {
+  margin: 0;
+}
+
+.pet-summary {
+  color: var(--pet-ivory);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pet-quote {
+  color: #e1e5ea;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  max-width: 330px;
+}
+
+.pet-emergency-primary,
+.pet-lost-copy a,
+.pet-emergency-sticky {
+  background:
+    radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.58), transparent 30%),
+    linear-gradient(180deg, #e6c77e, #b98f3d);
+  border: 1px solid rgba(255, 241, 200, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -3px 0 rgba(90, 59, 12, 0.28),
+    0 12px 24px rgba(0, 0, 0, 0.28);
+  color: #15100a;
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pet-emergency-primary:hover,
+.pet-lost-copy a:hover,
+.pet-emergency-sticky:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    inset 0 -3px 0 rgba(90, 59, 12, 0.24),
+    0 16px 30px rgba(0, 0, 0, 0.36);
+  transform: translateY(-2px);
+}
+
+.pet-emergency-primary:active,
+.pet-lost-copy a:active,
+.pet-emergency-sticky:active {
+  box-shadow:
+    inset 0 2px 5px rgba(90, 59, 12, 0.34),
+    0 5px 12px rgba(0, 0, 0, 0.24);
+  transform: translateY(1px) scale(0.985);
+}
+
+.pet-emergency-primary:focus-visible,
+.pet-lost-copy a:focus-visible,
+.pet-emergency-sticky:focus-visible {
+  outline: 3px solid rgba(244, 239, 229, 0.84);
+  outline-offset: 3px;
+}
+
+.pet-button-paw {
+  flex: 0 0 auto;
+  height: 20px;
+  width: 20px;
+}
+
+.pet-emergency-primary {
+  align-items: center;
+  border-radius: 6px;
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.pet-section {
+  border-top: 1px solid rgba(201, 163, 84, 0.25);
+  padding: 26px 22px;
+}
+
+.pet-personality {
+  background: #0d141e;
+}
+
+.pet-trait-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
+}
+
+.pet-trait {
+  align-content: center;
+  background: var(--pet-panel);
+  display: grid;
+  gap: 6px;
+  min-height: 122px;
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.pet-trait-icon {
+  align-items: center;
+  background: rgba(201, 163, 84, 0.08);
+  border: 1px solid rgba(201, 163, 84, 0.28);
+  border-radius: 50%;
+  color: var(--pet-gold);
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 38px;
+}
+
+.pet-trait-icon svg {
+  height: 21px;
+  width: 21px;
+}
+
+.pet-trait-value {
+  color: var(--pet-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+.pet-trait strong {
+  color: #e2e7ec;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pet-grid {
+  display: grid;
+  gap: 1px;
+}
+
+.pet-identity,
+.pet-vaccines,
+.pet-human,
+.pet-telegram {
+  background: var(--pet-panel);
+}
+
+.pet-identity dl {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.pet-identity dl div {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 105px 1fr;
+}
+
+.pet-identity dt {
+  color: var(--pet-gold);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pet-identity dd {
+  color: #edf0f3;
+  margin: 0;
+}
+
+.pet-vaccines ul {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 18px 0;
+  padding: 0;
+}
+
+.pet-vaccines li {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 26px 1fr;
+}
+
+.pet-vaccines li span:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pet-vaccines small {
+  color: var(--pet-muted);
+}
+
+.pet-vaccine-check {
+  align-items: center;
+  border: 1px solid var(--pet-gold);
+  border-radius: 50%;
+  color: var(--pet-gold);
+  display: flex;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
+}
+
+.pet-next-vaccine {
+  border: 1px solid rgba(201, 163, 84, 0.6);
+  border-radius: 6px;
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+}
+
+.pet-next-vaccine span {
+  color: var(--pet-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pet-next-vaccine strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+}
+
+.pet-next-vaccine time {
+  color: var(--pet-gold);
+  font-size: 1.15rem;
+}
+
+.pet-human {
+  display: block;
+}
+
+.pet-human h2 {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 9px 0 5px;
+}
+
+.pet-human p {
+  color: #d8dde3;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.pet-lost-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.pet-lost-copy a {
+  align-items: center;
+  border-radius: 6px;
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  padding: 13px 15px;
+  text-align: center;
+}
+
+.pet-telegram {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 12px 1fr;
+}
+
+.pet-telegram strong {
+  color: #fff;
+}
+
+.pet-telegram p {
+  color: var(--pet-muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin: 4px 0 0;
+}
+
+.pet-status-dot {
+  background: #55c985;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(85, 201, 133, 0.12);
+  height: 8px;
+  width: 8px;
+}
+
+.pet-emergency-sticky {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.36);
+  display: grid;
+  gap: 7px;
+  grid-template-columns: 20px 1fr auto;
+  left: max(10px, calc(50% - 270px));
+  padding: 12px 14px;
+  position: fixed;
+  right: max(10px, calc(50% - 270px));
+  z-index: 30;
+}
+
+.pet-emergency-sticky span {
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.pet-emergency-sticky strong {
+  font-size: 0.84rem;
+}
+
+.pet-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--pet-delay, 0ms);
+}
+
+.pet-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body:has(.pet-editorial) .legal-footer {
+  background: var(--pet-ink);
+  border-top-color: rgba(201, 163, 84, 0.25);
+  color: var(--pet-muted);
+  margin-top: 0;
+  padding: 24px 18px 100px;
+}
+
+body:has(.pet-editorial) .legal-footer strong,
+body:has(.pet-editorial) .legal-privacy summary {
+  color: var(--pet-gold);
+}
+
+body:has(.pet-editorial) .legal-privacy p {
+  color: var(--pet-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet-reveal,
+  .pet-emergency-primary,
+  .pet-lost-copy a,
+  .pet-emergency-sticky {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (min-width: 680px) {
+  .pet-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  .pet-hero {
+    min-height: 820px;
+  }
+}
