@@ -320,7 +320,8 @@ body.layout-hero .profile {
 
 /* INPUTS */
 
-.lead-form-card input {
+.lead-form-card input,
+.lead-form-card textarea {
 
   width: 100%;
 
@@ -340,13 +341,20 @@ body.layout-hero .profile {
 
 }
 
-.lead-form-card input::placeholder {
+.lead-form-card textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.lead-form-card input::placeholder,
+.lead-form-card textarea::placeholder {
 
   color: var(--text-muted);
 
 }
 
-.lead-form-card input:focus {
+.lead-form-card input:focus,
+.lead-form-card textarea:focus {
 
   outline: none;
 

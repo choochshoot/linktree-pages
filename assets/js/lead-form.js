@@ -55,6 +55,15 @@ document.addEventListener("DOMContentLoaded", function(){
       email: formData.get("email") || null
     }
 
+    const baseFields = new Set(["name", "whatsapp", "email", "website"])
+
+    for (const [key, value] of formData.entries()) {
+      if (baseFields.has(key)) continue
+
+      const cleanValue = typeof value === "string" ? value.trim() : value
+      payload[key] = cleanValue || null
+    }
+
     console.log("Lead capturado:", payload)
 
     // =====================================
