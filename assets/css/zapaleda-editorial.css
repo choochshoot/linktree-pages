@@ -178,6 +178,16 @@ body.layout-editorial .footer {
   gap: 11px;
 }
 
+.zpe-field-label {
+  color: rgba(248,250,252,0.72);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 4px 0 -5px;
+  text-transform: uppercase;
+}
+
 .zpe-lead-form input,
 .zpe-lead-form textarea {
   appearance: none;

@@ -65,10 +65,10 @@
 <form id="leadForm" class="zpe-lead-form">
   <input type="text" name="name" placeholder="Nombre" required>
   <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
-  <input type="email" name="email" placeholder="Correo" required>
-  <input type="date" name="event_date" placeholder="Fecha del evento">
-<input type="text" name="venue" placeholder="Recinto o lugar de la boda">
-<textarea name="couple_story" placeholder="Cuéntennos sobre ustedes, el estilo de la boda y cualquier detalle importante"></textarea>
+  <input type="email" name="email" placeholder="Correo">
+  <label class="zpe-field-label" for="event_date">Fecha del evento</label><input id="event_date" type="date" name="event_date" placeholder="Fecha del evento">
+<input id="venue" type="text" name="venue" placeholder="Recinto o lugar de la boda" required>
+<textarea id="couple_story" name="couple_story" placeholder="Cuéntennos sobre ustedes, el estilo de la boda y cualquier detalle importante"></textarea>
   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
   <button type="submit" class="btn primary">Quiero recibir una propuesta</button>
 </form>
