@@ -22,6 +22,32 @@ body.layout-editorial .footer {
   display: none;
 }
 
+.zpe-preloader {
+  align-items: center;
+  background: var(--zpe-preloader-bg, #FF6A1C);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 1;
+  position: fixed;
+  transition: opacity 380ms ease, visibility 380ms ease;
+  visibility: visible;
+  z-index: 9999;
+}
+
+.zpe-preloader.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.zpe-preloader-video {
+  display: block;
+  height: min(256px, 54vw);
+  object-fit: contain;
+  width: min(256px, 54vw);
+}
+
 .zpe-page {
   background: #090b0c;
   min-height: 100vh;
@@ -274,6 +300,26 @@ body.layout-editorial .footer {
   position: absolute;
   text-shadow: 0 8px 28px rgba(0,0,0,0.72);
   z-index: 2;
+}
+
+.zpe-gallery-pop {
+  bottom: max(28px, env(safe-area-inset-bottom));
+  display: block;
+  height: min(256px, 46vw);
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 14px;
+  transform: translate3d(12px, 10px, 0) scale(0.92);
+  transition: opacity 220ms ease, transform 220ms ease;
+  width: min(256px, 46vw);
+  z-index: 4;
+}
+
+.zpe-gallery-pop.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .zpe-signature {
