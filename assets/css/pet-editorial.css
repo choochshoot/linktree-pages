@@ -3,12 +3,24 @@
   --pet-panel: #101722;
   --pet-panel-soft: #17202d;
   --pet-gold: #c9a354;
+  --pet-accent-rgb: 201, 163, 84;
   --pet-ivory: #f4efe5;
   --pet-muted: #b7bec7;
+  --pet-page-bg: #e8e5df;
+  --pet-button-start: #e6c77e;
+  --pet-button-end: #b98f3d;
+  --pet-button-text: #15100a;
+  --pet-status: #55c985;
+  --pet-radius: 6px;
+  --pet-hero-position: 31% top;
+  --pet-hero-min-height: min(760px, 88vh);
+  --pet-hero-image-lift: 0px;
+  --pet-button-border: rgba(255, 241, 200, 0.62);
+  --pet-button-shadow-rgb: 90, 59, 12;
 }
 
 body:has(.pet-editorial) {
-  background: #e8e5df;
+  background: var(--pet-page-bg);
 }
 
 body:has(.pet-editorial) .page {
@@ -32,14 +44,14 @@ body:has(.pet-editorial) > .page > .footer {
 }
 
 .pet-hero {
-  min-height: min(760px, 88vh);
+  min-height: var(--pet-hero-min-height);
   overflow: hidden;
   position: relative;
 }
 
 .pet-hero-image,
 .pet-hero-shade {
-  height: 100%;
+  height: calc(100% + var(--pet-hero-image-lift));
   inset: 0;
   position: absolute;
   width: 100%;
@@ -47,7 +59,8 @@ body:has(.pet-editorial) > .page > .footer {
 
 .pet-hero-image {
   object-fit: cover;
-  object-position: 31% top;
+  object-position: var(--pet-hero-position);
+  transform: translateY(calc(-1 * var(--pet-hero-image-lift)));
 }
 
 .pet-hero-shade {
@@ -111,13 +124,13 @@ body:has(.pet-editorial) > .page > .footer {
 .pet-emergency-sticky {
   background:
     radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.58), transparent 30%),
-    linear-gradient(180deg, #e6c77e, #b98f3d);
-  border: 1px solid rgba(255, 241, 200, 0.62);
+    linear-gradient(180deg, var(--pet-button-start), var(--pet-button-end));
+  border: 1px solid var(--pet-button-border);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -3px 0 rgba(90, 59, 12, 0.28),
+    inset 0 -3px 0 rgba(var(--pet-button-shadow-rgb), 0.28),
     0 12px 24px rgba(0, 0, 0, 0.28);
-  color: #15100a;
+  color: var(--pet-button-text);
   font-weight: 900;
   text-decoration: none;
   transition:
@@ -130,7 +143,7 @@ body:has(.pet-editorial) > .page > .footer {
 .pet-emergency-sticky:hover {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.68),
-    inset 0 -3px 0 rgba(90, 59, 12, 0.24),
+    inset 0 -3px 0 rgba(var(--pet-button-shadow-rgb), 0.24),
     0 16px 30px rgba(0, 0, 0, 0.36);
   transform: translateY(-2px);
 }
@@ -139,7 +152,7 @@ body:has(.pet-editorial) > .page > .footer {
 .pet-lost-copy a:active,
 .pet-emergency-sticky:active {
   box-shadow:
-    inset 0 2px 5px rgba(90, 59, 12, 0.34),
+    inset 0 2px 5px rgba(var(--pet-button-shadow-rgb), 0.34),
     0 5px 12px rgba(0, 0, 0, 0.24);
   transform: translateY(1px) scale(0.985);
 }
@@ -159,7 +172,7 @@ body:has(.pet-editorial) > .page > .footer {
 
 .pet-emergency-primary {
   align-items: center;
-  border-radius: 6px;
+  border-radius: var(--pet-radius);
   display: flex;
   gap: 9px;
   justify-content: center;
@@ -169,7 +182,7 @@ body:has(.pet-editorial) > .page > .footer {
 }
 
 .pet-section {
-  border-top: 1px solid rgba(201, 163, 84, 0.25);
+  border-top: 1px solid rgba(var(--pet-accent-rgb), 0.25);
   padding: 26px 22px;
 }
 
@@ -196,8 +209,8 @@ body:has(.pet-editorial) > .page > .footer {
 
 .pet-trait-icon {
   align-items: center;
-  background: rgba(201, 163, 84, 0.08);
-  border: 1px solid rgba(201, 163, 84, 0.28);
+  background: rgba(var(--pet-accent-rgb), 0.08);
+  border: 1px solid rgba(var(--pet-accent-rgb), 0.28);
   border-radius: 50%;
   color: var(--pet-gold);
   display: flex;
@@ -297,8 +310,8 @@ body:has(.pet-editorial) > .page > .footer {
 }
 
 .pet-next-vaccine {
-  border: 1px solid rgba(201, 163, 84, 0.6);
-  border-radius: 6px;
+  border: 1px solid rgba(var(--pet-accent-rgb), 0.6);
+  border-radius: var(--pet-radius);
   display: grid;
   gap: 6px;
   padding: 16px;
@@ -346,7 +359,7 @@ body:has(.pet-editorial) > .page > .footer {
 
 .pet-lost-copy a {
   align-items: center;
-  border-radius: 6px;
+  border-radius: var(--pet-radius);
   display: flex;
   gap: 9px;
   justify-content: center;
@@ -373,17 +386,17 @@ body:has(.pet-editorial) > .page > .footer {
 }
 
 .pet-status-dot {
-  background: #55c985;
+  background: var(--pet-status);
   border-radius: 50%;
-  box-shadow: 0 0 0 5px rgba(85, 201, 133, 0.12);
+  box-shadow: 0 0 0 5px rgba(var(--pet-accent-rgb), 0.12);
   height: 8px;
   width: 8px;
 }
 
 .pet-emergency-sticky {
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  border-radius: 6px;
+  border: 1px solid var(--pet-button-border);
+  border-radius: var(--pet-radius);
   bottom: 10px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.36);
   display: grid;
@@ -421,7 +434,7 @@ body:has(.pet-editorial) > .page > .footer {
 
 body:has(.pet-editorial) .legal-footer {
   background: var(--pet-ink);
-  border-top-color: rgba(201, 163, 84, 0.25);
+  border-top-color: rgba(var(--pet-accent-rgb), 0.25);
   color: var(--pet-muted);
   margin-top: 0;
   padding: 24px 18px 100px;
