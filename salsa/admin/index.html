@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin de Salsa</title>
-  <meta name="description" content="Panel privado para completar datos veterinarios de Salsa.">
+  <meta name="description" content="Panel privé pour compléter les données vétérinaires de Salsa.">
   <link rel="stylesheet" href="../../assets/css/pet-owner-admin.css">
   <style>
     :root {
@@ -52,19 +52,19 @@
           <button type="submit">Guardar datos</button>
         </div>
         <div class="pet-admin-grid">
-          <label class="pet-admin-field"><span>Fecha de nacimiento</span><input type="date" name="birth_date" placeholder=""></label>
-<label class="pet-admin-field"><span>Peso (kg)</span><input type="number" name="weight_kg" placeholder="Ej. 4.20" step="0.01"></label>
-<label class="pet-admin-field"><span>Color</span><input type="text" name="color" placeholder="Ej. Blanco con cafe"></label>
-<label class="pet-admin-field"><span>Microchip</span><input type="text" name="microchip" placeholder="Numero de microchip"></label>
+          <label class="pet-admin-field"><span>Date de naissance</span><input type="date" name="birth_date" placeholder=""></label>
+<label class="pet-admin-field"><span>Poids (kg)</span><input type="number" name="weight_kg" placeholder="Ex. 4.20" step="0.01"></label>
+<label class="pet-admin-field"><span>Couleur</span><input type="text" name="color" placeholder="Ex. Blanc et café"></label>
+<label class="pet-admin-field"><span>Puce électronique</span><input type="text" name="microchip" placeholder="Numéro de puce"></label>
         </div>
         <div class="pet-admin-section-head pet-admin-subhead">
           <h2>Contacto y Telegram</h2>
         </div>
         <div class="pet-admin-grid">
-          <label class="pet-admin-field"><span>Nombre de contacto</span><input type="text" name="owner_name" placeholder="Lulu y Hugh De France"></label>
-<label class="pet-admin-field"><span>WhatsApp</span><input type="tel" name="whatsapp_phone" placeholder="Solo numeros con lada"></label>
-<label class="pet-admin-field"><span>Telegram chat ID</span><input type="text" name="telegram_chat_id" placeholder="Ej. 123456789"></label>
-<label class="pet-admin-field"><span>Zona horaria</span><input type="text" name="timezone" placeholder="" value="America/Mexico_City"></label>
+          <label class="pet-admin-field"><span>Contact famille</span><input type="text" name="owner_name" placeholder="Lulu et Hugh De France"></label>
+<label class="pet-admin-field"><span>WhatsApp</span><input type="tel" name="whatsapp_phone" placeholder="Numéro avec indicatif"></label>
+<label class="pet-admin-field"><span>Telegram chat ID</span><input type="text" name="telegram_chat_id" placeholder="Ex. 123456789"></label>
+<label class="pet-admin-field"><span>Fuseau horaire</span><input type="text" name="timezone" placeholder="" value="Europe/Paris"></label>
           <label class="pet-admin-check">
             <input type="checkbox" name="telegram_enabled">
             <span>Activar recordatorios por Telegram</span>
@@ -83,8 +83,8 @@
         <div class="pet-admin-vaccines">
           
 <form class="pet-admin-vaccine" data-vaccine-form>
-  <h3>Rabia</h3>
-  <input type="hidden" name="vaccine_name" value="Rabia">
+  <h3>CHPPi / CHPL</h3>
+  <input type="hidden" name="vaccine_name" value="CHPPi / CHPL">
   <div class="pet-admin-vaccine-grid">
     <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
     <label class="pet-admin-field"><span>Proxima fecha</span><input type="date" name="next_due_on"></label>
@@ -98,8 +98,8 @@
 
 
 <form class="pet-admin-vaccine" data-vaccine-form>
-  <h3>Múltiple canina</h3>
-  <input type="hidden" name="vaccine_name" value="Múltiple canina">
+  <h3>Leptospirose (L)</h3>
+  <input type="hidden" name="vaccine_name" value="Leptospirose (L)">
   <div class="pet-admin-vaccine-grid">
     <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
     <label class="pet-admin-field"><span>Proxima fecha</span><input type="date" name="next_due_on"></label>
@@ -113,8 +113,23 @@
 
 
 <form class="pet-admin-vaccine" data-vaccine-form>
-  <h3>Desparasitación</h3>
-  <input type="hidden" name="vaccine_name" value="Desparasitación">
+  <h3>Toux du chenil (Bordetella)</h3>
+  <input type="hidden" name="vaccine_name" value="Toux du chenil (Bordetella)">
+  <div class="pet-admin-vaccine-grid">
+    <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
+    <label class="pet-admin-field"><span>Proxima fecha</span><input type="date" name="next_due_on"></label>
+    <label class="pet-admin-field"><span>Veterinario</span><input type="text" name="veterinarian_name"></label>
+    <label class="pet-admin-field"><span>Clinica</span><input type="text" name="clinic_name"></label>
+    <label class="pet-admin-field"><span>Lote</span><input type="text" name="lot_number"></label>
+    <label class="pet-admin-check"><input type="checkbox" name="is_public" checked><span>Mostrar en perfil publico</span></label>
+  </div>
+  <label class="pet-admin-field"><span>Notas privadas</span><textarea name="private_notes"></textarea></label>
+</form>
+
+
+<form class="pet-admin-vaccine" data-vaccine-form>
+  <h3>Rage (voyages)</h3>
+  <input type="hidden" name="vaccine_name" value="Rage (voyages)">
   <div class="pet-admin-vaccine-grid">
     <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
     <label class="pet-admin-field"><span>Proxima fecha</span><input type="date" name="next_due_on"></label>
@@ -131,7 +146,7 @@
     </section>
   </main>
 
-  <script type="application/json" id="pet-admin-config">{"slug": "salsa", "profile_type": "pet", "published": true, "title": "Admin de Salsa", "description": "Panel privado para completar datos veterinarios de Salsa.", "hero_image": "../assets/images/hero.webp", "back_url": "../", "supabase": {"url": "https://rkimkgdkzakflebplull.supabase.co", "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJraW1rZ2RremFrZmxlYnBsdWxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzg4OTksImV4cCI6MjA4ODkxNDg5OX0.NPXwTs9V0qxKxrJIh0ydlmEiHlfALGdJ0KrQwn6eIL0"}, "theme": {"background": "#170C79", "panel": "#1e1688", "accent": "#8ACBD0", "accent_alt": "#56B6C6", "cream": "#EFE3CA", "text": "#f9fbff", "muted": "#c5d7dd"}, "profile_fields": [{"name": "birth_date", "label": "Fecha de nacimiento", "type": "date"}, {"name": "weight_kg", "label": "Peso (kg)", "type": "number", "step": "0.01", "placeholder": "Ej. 4.20"}, {"name": "color", "label": "Color", "type": "text", "placeholder": "Ej. Blanco con cafe"}, {"name": "microchip", "label": "Microchip", "type": "text", "placeholder": "Numero de microchip"}], "contact_fields": [{"name": "owner_name", "label": "Nombre de contacto", "type": "text", "placeholder": "Lulu y Hugh De France"}, {"name": "whatsapp_phone", "label": "WhatsApp", "type": "tel", "placeholder": "Solo numeros con lada"}, {"name": "telegram_chat_id", "label": "Telegram chat ID", "type": "text", "placeholder": "Ej. 123456789"}, {"name": "timezone", "label": "Zona horaria", "type": "text", "value": "America/Mexico_City"}], "vaccinations": [{"vaccine_name": "Rabia", "label": "Rabia"}, {"vaccine_name": "Múltiple canina", "label": "Múltiple canina"}, {"vaccine_name": "Desparasitación", "label": "Desparasitación"}], "avatar_image": "../assets/images/profile.webp"}</script>
+  <script type="application/json" id="pet-admin-config">{"slug": "salsa", "profile_type": "pet", "published": true, "title": "Admin de Salsa", "description": "Panel privé pour compléter les données vétérinaires de Salsa.", "hero_image": "../assets/images/hero.webp", "back_url": "../", "supabase": {"url": "https://rkimkgdkzakflebplull.supabase.co", "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJraW1rZ2RremFrZmxlYnBsdWxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzg4OTksImV4cCI6MjA4ODkxNDg5OX0.NPXwTs9V0qxKxrJIh0ydlmEiHlfALGdJ0KrQwn6eIL0"}, "theme": {"background": "#170C79", "panel": "#1e1688", "accent": "#8ACBD0", "accent_alt": "#56B6C6", "cream": "#EFE3CA", "text": "#f9fbff", "muted": "#c5d7dd"}, "profile_fields": [{"name": "birth_date", "label": "Date de naissance", "type": "date"}, {"name": "weight_kg", "label": "Poids (kg)", "type": "number", "step": "0.01", "placeholder": "Ex. 4.20"}, {"name": "color", "label": "Couleur", "type": "text", "placeholder": "Ex. Blanc et café"}, {"name": "microchip", "label": "Puce électronique", "type": "text", "placeholder": "Numéro de puce"}], "contact_fields": [{"name": "owner_name", "label": "Contact famille", "type": "text", "placeholder": "Lulu et Hugh De France"}, {"name": "whatsapp_phone", "label": "WhatsApp", "type": "tel", "placeholder": "Numéro avec indicatif"}, {"name": "telegram_chat_id", "label": "Telegram chat ID", "type": "text", "placeholder": "Ex. 123456789"}, {"name": "timezone", "label": "Fuseau horaire", "type": "text", "value": "Europe/Paris"}], "vaccinations": [{"vaccine_name": "CHPPi / CHPL", "label": "CHPPi / CHPL"}, {"vaccine_name": "Leptospirose (L)", "label": "Leptospirose (L)"}, {"vaccine_name": "Toux du chenil (Bordetella)", "label": "Toux du chenil (Bordetella)"}, {"vaccine_name": "Rage (voyages)", "label": "Rage (voyages)"}], "avatar_image": "../assets/images/profile.webp"}</script>
   <script src="../../assets/js/pet-owner-admin.js"></script>
 </body>
 </html>
