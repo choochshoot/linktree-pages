@@ -1,0 +1,456 @@
+.catering-landing {
+  color: #f8fafc;
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+
+.catering-content {
+  display: grid;
+  gap: 18px;
+}
+
+body[data-slug="daniela-catering"] .page {
+  padding-top: 10px;
+}
+
+body[data-slug="daniela-catering"] .modules {
+  position: relative;
+}
+
+body[data-slug="daniela-catering"] .sticky-brand {
+  height: 0;
+  margin: 0;
+  transform: translateY(16px);
+}
+
+body[data-slug="daniela-catering"] .sticky-brand-link {
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.32);
+  min-height: 44px;
+  padding-left: 6px;
+}
+
+body[data-slug="daniela-catering"] .sticky-brand-logo {
+  background: #ffffff;
+  border: 2px solid rgba(251, 191, 36, 0.88);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.34);
+  height: 32px;
+  object-fit: contain;
+  width: 32px;
+}
+
+body[data-slug="daniela-catering"] .lead-form {
+  margin-top: -4px;
+}
+
+body[data-slug="daniela-catering"] .lead-form-card {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.9)),
+    linear-gradient(135deg, rgba(251, 191, 36, 0.22), rgba(34, 197, 94, 0.12));
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(2, 6, 23, 0.22);
+}
+
+body[data-slug="daniela-catering"] .lead-form-card input {
+  background: rgba(248, 250, 252, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 8px;
+  color: #0f172a;
+}
+
+body[data-slug="daniela-catering"] .lead-form-card input:focus {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.22);
+}
+
+body[data-slug="daniela-catering"] .lead-form-card button,
+body[data-slug="daniela-catering"] .buttons .btn.primary {
+  backdrop-filter: blur(14px) saturate(135%);
+  background:
+    linear-gradient(180deg, rgba(74, 222, 128, 0.96), rgba(34, 197, 94, 0.88));
+  border: 1px solid rgba(220, 252, 231, 0.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    0 10px 24px rgba(5, 46, 22, 0.26);
+  color: #052e16;
+  font-weight: 900;
+  position: relative;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+body[data-slug="daniela-catering"] .lead-form-card button:hover,
+body[data-slug="daniela-catering"] .buttons .btn.primary:hover {
+  background:
+    linear-gradient(180deg, rgba(253, 224, 71, 0.98), rgba(251, 191, 36, 0.9));
+  border-color: rgba(254, 249, 195, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.58),
+    0 14px 30px rgba(146, 64, 14, 0.3);
+  color: #111827;
+  transform: translateY(-2px);
+}
+
+body[data-slug="daniela-catering"] .lead-form-card button:active,
+body[data-slug="daniela-catering"] .buttons .btn.primary:active,
+body[data-slug="daniela-catering"] .catering-action:active {
+  transform: translateY(0) scale(0.985);
+}
+
+body[data-slug="daniela-catering"] .lead-form-card button:focus-visible,
+body[data-slug="daniela-catering"] .buttons .btn:focus-visible,
+body[data-slug="daniela-catering"] .catering-action:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.72);
+  outline-offset: 3px;
+}
+
+.catering-hero {
+  border-radius: 8px;
+  min-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+.catering-hero-image,
+.catering-image-fallback {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.catering-image-fallback {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.82)),
+    linear-gradient(135deg, #19342f, #111827 48%, #3a2713);
+}
+
+.catering-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 23, 0.28),
+    rgba(2, 6, 23, 0.72) 56%,
+    rgba(2, 6, 23, 0.96)
+  );
+  inset: 0;
+  position: absolute;
+}
+
+.catering-hero-content {
+  align-content: end;
+  display: grid;
+  gap: 18px;
+  min-height: 560px;
+  padding: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.catering-eyebrow {
+  color: #fbbf24;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.catering-hero h1,
+.catering-section h2 {
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.catering-hero h1 {
+  font-size: 2.55rem;
+  max-width: 820px;
+  text-shadow: 0 2px 18px rgba(2, 6, 23, 0.72);
+}
+
+.catering-hero p:not(.catering-eyebrow),
+.catering-section p {
+  color: #f1f5f9;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 760px;
+}
+
+.catering-actions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  max-width: 760px;
+}
+
+.catering-action {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.catering-action.primary {
+  background: #22c55e;
+  color: #052e16;
+}
+
+.catering-action.secondary {
+  background: rgba(248, 250, 252, 0.12);
+  border: 1px solid rgba(248, 250, 252, 0.22);
+  color: #f8fafc;
+}
+
+.catering-highlights,
+.catering-section {
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 8px;
+}
+
+.catering-highlights {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+}
+
+.catering-highlights article {
+  background: rgba(2, 6, 23, 0.55);
+  display: grid;
+  gap: 6px;
+  min-height: 112px;
+  padding: 18px;
+}
+
+.catering-highlights strong {
+  color: #fbbf24;
+  font-size: 1.45rem;
+}
+
+.catering-highlights span {
+  color: #f1f5f9;
+  line-height: 1.35;
+}
+
+.catering-section {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.catering-section-image {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.catering-section h2 {
+  font-size: 1.8rem;
+}
+
+.catering-items {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-top: 6px;
+}
+
+.catering-item {
+  background: rgba(2, 6, 23, 0.52);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.catering-item-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.28);
+  object-fit: cover;
+  width: 100%;
+}
+
+.catering-item h3 {
+  color: #fbbf24;
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.catering-item p {
+  color: #e2e8f0;
+  font-size: 0.94rem;
+}
+
+.catering-service-options {
+  display: grid;
+  gap: 10px;
+}
+
+.catering-service-option {
+  align-items: center;
+  backdrop-filter: blur(14px) saturate(125%);
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.14), rgba(148, 163, 184, 0.07));
+  border: 1px solid rgba(248, 250, 252, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 68px minmax(0, 1fr);
+  padding: 10px 12px;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+}
+
+.catering-service-option:hover {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.22), rgba(248, 250, 252, 0.12));
+  border-color: rgba(253, 224, 71, 0.68);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.28);
+  transform: translateY(-2px);
+}
+
+.catering-service-option:focus-visible {
+  outline: 3px solid rgba(251, 191, 36, 0.72);
+  outline-offset: 3px;
+}
+
+.catering-service-icon {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.84);
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.26);
+  object-fit: cover;
+  width: 68px;
+}
+
+.catering-service-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.catering-service-copy strong {
+  color: #fbbf24;
+  font-size: 0.98rem;
+  font-weight: 850;
+}
+
+.catering-service-copy span {
+  color: #e2e8f0;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+body[data-slug="daniela-catering"] .catering-content-actions h2 {
+  color: #ffffff;
+}
+
+body[data-slug="daniela-catering"] .catering-action.secondary {
+  backdrop-filter: blur(16px) saturate(130%);
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.18), rgba(148, 163, 184, 0.1));
+  border-color: rgba(248, 250, 252, 0.44);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 10px 22px rgba(2, 6, 23, 0.24);
+  color: #ffffff;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+
+body[data-slug="daniela-catering"] .catering-action.secondary:hover {
+  background:
+    linear-gradient(180deg, rgba(251, 191, 36, 0.3), rgba(248, 250, 252, 0.15));
+  border-color: rgba(253, 224, 71, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 14px 28px rgba(2, 6, 23, 0.32);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+body[data-slug="daniela-catering"] .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 560ms ease,
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+body[data-slug="daniela-catering"] .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-slug="daniela-catering"] .catering-item,
+body[data-slug="daniela-catering"] .catering-section-image {
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+body[data-slug="daniela-catering"] .catering-item:hover {
+  border-color: rgba(251, 191, 36, 0.48);
+  box-shadow: 0 14px 28px rgba(2, 6, 23, 0.22);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 720px) {
+  .catering-hero,
+  .catering-hero-content {
+    min-height: 620px;
+  }
+
+  .catering-hero-content {
+    padding: 22px;
+  }
+
+  .catering-hero h1 {
+    font-size: 2rem;
+  }
+
+  .catering-actions,
+  .catering-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-slug="daniela-catering"] .reveal-on-scroll,
+  body[data-slug="daniela-catering"] .catering-item,
+  body[data-slug="daniela-catering"] .catering-section-image {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
