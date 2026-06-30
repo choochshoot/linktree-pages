@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const slug = config.slug
   const supabaseUrl = config.supabase.url.replace(/\/$/, "")
   const supabaseKey = config.supabase.anon_key
+  const ui = config.labels?.status || {}
+  const defaultTimezone = config.default_timezone || "Europe/Paris"
   const headers = {
     "Content-Type": "application/json",
     "apikey": supabaseKey,
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault()
     const formData = new FormData(loginForm)
     ownerPassword = String(formData.get("password") || "")
-    setStatus("Validando acceso...")
+    setStatus(ui.validating || "Validando acceso...")
 
     try {
       const isValid = await rpc("verify_pet_owner_password", {
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!isValid) {
         ownerPassword = ""
-        setStatus("Password incorrecto.")
+        setStatus(ui.invalid_password || "Password incorrecto.")
         return
       }
 
@@ -50,14 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.error(error)
       ownerPassword = ""
-      setStatus("No se pudo validar el acceso.")
+      setStatus(ui.validation_error || "No se pudo validar el acceso.")
     }
   })
 
   profileForm?.addEventListener("submit", async (event) => {
     event.preventDefault()
     const formData = new FormData(profileForm)
-    setStatus("Guardando datos...")
+    setStatus(ui.saving_profile || "Guardando datos...")
 
     try {
       await rpc("update_pet_profile_by_password", {
@@ -71,18 +73,18 @@ document.addEventListener("DOMContentLoaded", () => {
         p_whatsapp_phone: valueOrNull(formData.get("whatsapp_phone")),
         p_telegram_chat_id: valueOrNull(formData.get("telegram_chat_id")),
         p_telegram_enabled: formData.get("telegram_enabled") === "on",
-        p_timezone: valueOrNull(formData.get("timezone")) || "America/Mexico_City",
+        p_timezone: valueOrNull(formData.get("timezone")) || defaultTimezone,
       })
-      setStatus("Datos guardados.")
+      setStatus(ui.profile_saved || "Datos guardados.")
     } catch (error) {
       console.error(error)
-      setStatus("No se pudieron guardar los datos.")
+      setStatus(ui.profile_error || "No se pudieron guardar los datos.")
     }
   })
 
   saveVaccinesButton?.addEventListener("click", async () => {
     const forms = document.querySelectorAll("[data-vaccine-form]")
-    setStatus("Guardando vacunas...")
+    setStatus(ui.saving_vaccines || "Guardando vacunas...")
 
     try {
       for (const form of forms) {
@@ -103,10 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
           p_is_public: formData.get("is_public") === "on",
         })
       }
-      setStatus("Vacunas guardadas.")
+      setStatus(ui.vaccines_saved || "Vacunas guardadas.")
     } catch (error) {
       console.error(error)
-      setStatus("No se pudieron guardar las vacunas.")
+      setStatus(ui.vaccines_error || "No se pudieron guardar las vacunas.")
     }
   })
 
