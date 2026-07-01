@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
   const configEl = document.getElementById("pet-admin-config")
   if (!configEl) return
 
@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const authPanel = document.querySelector("[data-auth-panel]")
   const status = document.querySelector("[data-status]")
   const saveVaccinesButton = document.querySelector("[data-save-vaccines]")
+  const telegramConnectLink = document.querySelector("[data-telegram-connect]")
   let ownerPassword = ""
+
+  configureTelegramConnectLink()
 
   loginForm?.addEventListener("submit", async (event) => {
     event.preventDefault()
@@ -112,6 +115,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
+
+  function configureTelegramConnectLink() {
+    if (!telegramConnectLink) return
+
+    const link = config.telegram_link || {}
+    if (!link.enabled || !link.bot_username) {
+      telegramConnectLink.hidden = true
+      return
+    }
+
+    const botUsername = String(link.bot_username).replace(/^@/, "").trim()
+    const startParam = encodeURIComponent(String(link.start_param || slug).trim())
+    telegramConnectLink.href = `https://t.me/${botUsername}?start=${startParam}`
+  }
+
   async function rpc(name, payload) {
     const response = await fetch(`${supabaseUrl}/rest/v1/rpc/${name}`, {
       method: "POST",
@@ -172,3 +190,4 @@ document.addEventListener("DOMContentLoaded", () => {
     return clean === null ? null : Number(clean)
   }
 })
+

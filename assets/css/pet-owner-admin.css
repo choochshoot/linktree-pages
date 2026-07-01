@@ -1,4 +1,4 @@
-* {
+﻿* {
   box-sizing: border-box;
 }
 
@@ -187,6 +187,9 @@ button:hover {
   transform: translateY(-1px);
 }
 
+
+
+
 .pet-admin-status {
   color: var(--admin-accent);
   font-weight: 800;
@@ -204,6 +207,37 @@ button:hover {
 
 .pet-admin-section-head {
   margin-bottom: 16px;
+}
+.pet-admin-telegram-connect {
+  display: grid;
+  gap: 7px;
+  justify-items: start;
+}
+
+.pet-admin-telegram-connect a {
+  align-items: center;
+  background: rgba(138, 203, 208, 0.12);
+  border: 1px solid rgba(138, 203, 208, 0.45);
+  border-radius: 8px;
+  color: var(--admin-accent);
+  display: inline-flex;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.pet-admin-telegram-connect a:hover {
+  background: rgba(138, 203, 208, 0.18);
+  transform: translateY(-1px);
+}
+
+.pet-admin-telegram-connect small {
+  color: var(--admin-muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
 }
 
 .pet-admin-subhead {
@@ -249,3 +283,5 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
