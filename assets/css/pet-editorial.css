@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --pet-ink: #0a0f17;
   --pet-panel: #101722;
   --pet-panel-soft: #17202d;
@@ -63,12 +63,44 @@ body:has(.pet-editorial) > .page > .footer {
   transform: translateY(calc(-1 * var(--pet-hero-image-lift)));
 }
 
+.pet-hero-pop {
+  animation: pet-pop-surprise 780ms cubic-bezier(0.18, 1.45, 0.32, 1) 260ms both;
+  bottom: clamp(150px, 21vh, 210px);
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.38));
+  height: auto;
+  max-height: 190px;
+  max-width: 128px;
+  object-fit: contain;
+  pointer-events: none;
+  position: absolute;
+  right: clamp(8px, 4vw, 24px);
+  transform-origin: 72% 80%;
+  width: min(30vw, 128px);
+  z-index: 2;
+}
+
+@keyframes pet-pop-surprise {
+  0% {
+    opacity: 0;
+    transform: translate(18px, 16px) rotate(8deg) scale(0.64);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-3deg) scale(1.06);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-2deg) scale(1);
+  }
+}
+
 .pet-hero-shade {
   background:
     linear-gradient(180deg, rgba(10, 15, 23, 0.08), rgba(10, 15, 23, 0.18) 45%, rgba(10, 15, 23, 0.96)),
     linear-gradient(90deg, transparent 55%, rgba(10, 15, 23, 0.5));
 }
-
 .pet-hero-copy {
   bottom: 0;
   display: grid;
@@ -77,6 +109,7 @@ body:has(.pet-editorial) > .page > .footer {
   padding: 32px 24px 26px;
   position: absolute;
   right: 0;
+  z-index: 3;
 }
 
 .pet-kicker {
@@ -176,11 +209,15 @@ body:has(.pet-editorial) > .page > .footer {
   display: flex;
   gap: 9px;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 18px;
   padding: 14px 16px;
   text-align: center;
 }
 
+
+body:has(.pet-editorial) .pet-hero .pet-emergency-primary {
+  display: none;
+}
 .pet-section {
   border-top: 1px solid rgba(var(--pet-accent-rgb), 0.25);
   padding: 26px 22px;
@@ -397,7 +434,7 @@ body:has(.pet-editorial) > .page > .footer {
   align-items: center;
   border: 1px solid var(--pet-button-border);
   border-radius: var(--pet-radius);
-  bottom: 10px;
+  bottom: max(12px, env(safe-area-inset-bottom));
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.36);
   display: grid;
   gap: 7px;
@@ -450,6 +487,7 @@ body:has(.pet-editorial) .legal-privacy p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .pet-hero-pop,
   .pet-reveal,
   .pet-emergency-primary,
   .pet-lost-copy a,
@@ -468,4 +506,25 @@ body:has(.pet-editorial) .legal-privacy p {
   .pet-hero {
     min-height: 820px;
   }
+
+  .pet-hero-pop {
+  animation: pet-pop-surprise 780ms cubic-bezier(0.18, 1.45, 0.32, 1) 260ms both;
+  bottom: clamp(150px, 21vh, 210px);
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.38));
+  height: auto;
+  max-height: 190px;
+  max-width: 128px;
+  object-fit: contain;
+  pointer-events: none;
+  position: absolute;
+  right: clamp(8px, 4vw, 24px);
+  transform-origin: 72% 80%;
+  width: min(30vw, 128px);
+  z-index: 2;
 }
+}
+
+
+
+
+

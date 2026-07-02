@@ -54,7 +54,9 @@ body {
   display: grid;
   gap: 8px;
   justify-items: center;
-  max-width: 520px;
+  max-width: min(520px, 100%);
+  min-width: 0;
+  width: 100%;
   z-index: 1;
 }
 
@@ -79,10 +81,13 @@ body {
 
 .pet-admin-hero-copy h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.8rem, 14vw, 5rem);
+  font-size: clamp(2.25rem, 12vw, 5rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.92;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .pet-admin-hero-copy span,
@@ -283,5 +288,7 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
 
 

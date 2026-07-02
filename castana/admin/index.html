@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración de Castaña</title>
+  <meta name="description" content="Espacio privado para completar los datos veterinarios y de contacto de Castaña.">
+  <link rel="stylesheet" href="../../assets/css/pet-owner-admin.css">
+  <style>
+    :root {
+      --admin-bg: #1F6F5F;
+      --admin-panel: #245f55;
+      --admin-accent: #6FCF97;
+      --admin-accent-alt: #2FA084;
+      --admin-cream: #EEEEEE;
+      --admin-text: #f9fffb;
+      --admin-muted: #d9eee4;
+    }
+  </style>
+</head>
+<body data-admin-slug="castana">
+  <main class="pet-admin-shell">
+    <section class="pet-admin-hero">
+      <div class="pet-admin-avatar-wrap">
+        <img src="../assets/images/profile.webp" alt="Administración de Castaña" class="pet-admin-avatar">
+      </div>
+      <div class="pet-admin-hero-copy">
+        <a href="../" class="pet-admin-back">Ver perfil público</a>
+        <p>Espacio privado</p>
+        <h1>Administración de Castaña</h1>
+        <span>Completa datos veterinarios, contactos y recordatorios de Castaña.</span>
+      </div>
+    </section>
+
+    <section class="pet-admin-card" data-auth-panel>
+      <h2>Acceso familia</h2>
+      <p>Escribe el password autorizado para modificar los datos privados de Castaña.</p>
+      <form class="pet-admin-login" data-login-form>
+        <label for="owner-password">Password</label>
+        <div class="pet-admin-password-row">
+          <input id="owner-password" name="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+      <p class="pet-admin-status" data-status></p>
+    </section>
+
+    <section class="pet-admin-workspace" data-workspace hidden>
+      <form class="pet-admin-card pet-admin-form" data-profile-form>
+        <div class="pet-admin-section-head">
+          <h2>Información a confirmar</h2>
+          <button type="submit">Guardar datos</button>
+        </div>
+        <div class="pet-admin-grid">
+          <label class="pet-admin-field"><span>Fecha de nacimiento / llegada</span><input type="date" name="birth_date" placeholder=""></label>
+<label class="pet-admin-field"><span>Peso (kg)</span><input type="number" name="weight_kg" placeholder="Ej. 18.00" step="0.01"></label>
+<label class="pet-admin-field"><span>Color</span><input type="text" name="color" placeholder="Ej. Café castaño"></label>
+<label class="pet-admin-field"><span>Microchip</span><input type="text" name="microchip" placeholder="Número de microchip"></label>
+        </div>
+        <div class="pet-admin-section-head pet-admin-subhead">
+          <h2>Contacto y Telegram</h2>
+          <div class="pet-admin-telegram-connect"><a href="#" target="_blank" rel="noopener" data-telegram-connect>Conectar Telegram</a><small>Abre Telegram con este botón para enlazar automáticamente este chat a los recordatorios de Castaña.</small></div>
+        </div>
+        <div class="pet-admin-grid">
+          <label class="pet-admin-field"><span>Contacto familia</span><input type="text" name="owner_name" placeholder="Familia de Castaña"></label>
+<label class="pet-admin-field"><span>WhatsApp</span><input type="tel" name="whatsapp_phone" placeholder="Número con lada"></label>
+<label class="pet-admin-field"><span>Telegram chat ID</span><input type="text" name="telegram_chat_id" placeholder="Se llena automático con el bot"></label>
+<label class="pet-admin-field"><span>Zona horaria</span><input type="text" name="timezone" placeholder="" value="America/Mexico_City"></label>
+          <label class="pet-admin-check">
+            <input type="checkbox" name="telegram_enabled">
+            <span>Activar recordatorios Telegram</span>
+          </label>
+        </div>
+      </form>
+
+      <section class="pet-admin-card">
+        <div class="pet-admin-section-head">
+          <div>
+            <h2>Vacunas</h2>
+            <p>La próxima fecha activa los recordatorios privados por Telegram.</p>
+          </div>
+          <button type="button" data-save-vaccines>Guardar vacunas</button>
+        </div>
+        <div class="pet-admin-vaccines">
+          
+<form class="pet-admin-vaccine" data-vaccine-form>
+  <h3>Múltiple canina</h3>
+  <input type="hidden" name="vaccine_name" value="Múltiple canina">
+  <div class="pet-admin-vaccine-grid">
+    <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
+    <label class="pet-admin-field"><span>Próxima fecha</span><input type="date" name="next_due_on"></label>
+    <label class="pet-admin-field"><span>Veterinario</span><input type="text" name="veterinarian_name"></label>
+    <label class="pet-admin-field"><span>Clínica</span><input type="text" name="clinic_name"></label>
+    <label class="pet-admin-field"><span>Lote</span><input type="text" name="lot_number"></label>
+    <label class="pet-admin-check"><input type="checkbox" name="is_public" checked><span>Mostrar en el perfil público</span></label>
+  </div>
+  <label class="pet-admin-field"><span>Notas privadas</span><textarea name="private_notes"></textarea></label>
+</form>
+
+
+<form class="pet-admin-vaccine" data-vaccine-form>
+  <h3>Rabia</h3>
+  <input type="hidden" name="vaccine_name" value="Rabia">
+  <div class="pet-admin-vaccine-grid">
+    <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
+    <label class="pet-admin-field"><span>Próxima fecha</span><input type="date" name="next_due_on"></label>
+    <label class="pet-admin-field"><span>Veterinario</span><input type="text" name="veterinarian_name"></label>
+    <label class="pet-admin-field"><span>Clínica</span><input type="text" name="clinic_name"></label>
+    <label class="pet-admin-field"><span>Lote</span><input type="text" name="lot_number"></label>
+    <label class="pet-admin-check"><input type="checkbox" name="is_public" checked><span>Mostrar en el perfil público</span></label>
+  </div>
+  <label class="pet-admin-field"><span>Notas privadas</span><textarea name="private_notes"></textarea></label>
+</form>
+
+
+<form class="pet-admin-vaccine" data-vaccine-form>
+  <h3>Bordetella</h3>
+  <input type="hidden" name="vaccine_name" value="Bordetella">
+  <div class="pet-admin-vaccine-grid">
+    <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
+    <label class="pet-admin-field"><span>Próxima fecha</span><input type="date" name="next_due_on"></label>
+    <label class="pet-admin-field"><span>Veterinario</span><input type="text" name="veterinarian_name"></label>
+    <label class="pet-admin-field"><span>Clínica</span><input type="text" name="clinic_name"></label>
+    <label class="pet-admin-field"><span>Lote</span><input type="text" name="lot_number"></label>
+    <label class="pet-admin-check"><input type="checkbox" name="is_public" checked><span>Mostrar en el perfil público</span></label>
+  </div>
+  <label class="pet-admin-field"><span>Notas privadas</span><textarea name="private_notes"></textarea></label>
+</form>
+
+
+<form class="pet-admin-vaccine" data-vaccine-form>
+  <h3>Desparasitación</h3>
+  <input type="hidden" name="vaccine_name" value="Desparasitación">
+  <div class="pet-admin-vaccine-grid">
+    <label class="pet-admin-field"><span>Fecha aplicada</span><input type="date" name="administered_on"></label>
+    <label class="pet-admin-field"><span>Próxima fecha</span><input type="date" name="next_due_on"></label>
+    <label class="pet-admin-field"><span>Veterinario</span><input type="text" name="veterinarian_name"></label>
+    <label class="pet-admin-field"><span>Clínica</span><input type="text" name="clinic_name"></label>
+    <label class="pet-admin-field"><span>Lote</span><input type="text" name="lot_number"></label>
+    <label class="pet-admin-check"><input type="checkbox" name="is_public" checked><span>Mostrar en el perfil público</span></label>
+  </div>
+  <label class="pet-admin-field"><span>Notas privadas</span><textarea name="private_notes"></textarea></label>
+</form>
+
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="application/json" id="pet-admin-config">{"slug": "castana", "profile_type": "pet", "published": true, "title": "Administración de Castaña", "description": "Espacio privado para completar los datos veterinarios y de contacto de Castaña.", "hero_image": "../assets/images/hero.webp", "back_url": "../", "supabase": {"url": "https://rkimkgdkzakflebplull.supabase.co", "anon_key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJraW1rZ2RremFrZmxlYnBsdWxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzg4OTksImV4cCI6MjA4ODkxNDg5OX0.NPXwTs9V0qxKxrJIh0ydlmEiHlfALGdJ0KrQwn6eIL0"}, "theme": {"background": "#1F6F5F", "panel": "#245f55", "accent": "#6FCF97", "accent_alt": "#2FA084", "cream": "#EEEEEE", "text": "#f9fffb", "muted": "#d9eee4"}, "profile_fields": [{"name": "birth_date", "label": "Fecha de nacimiento / llegada", "type": "date"}, {"name": "weight_kg", "label": "Peso (kg)", "type": "number", "step": "0.01", "placeholder": "Ej. 18.00"}, {"name": "color", "label": "Color", "type": "text", "placeholder": "Ej. Café castaño"}, {"name": "microchip", "label": "Microchip", "type": "text", "placeholder": "Número de microchip"}], "contact_fields": [{"name": "owner_name", "label": "Contacto familia", "type": "text", "placeholder": "Familia de Castaña"}, {"name": "whatsapp_phone", "label": "WhatsApp", "type": "tel", "placeholder": "Número con lada"}, {"name": "telegram_chat_id", "label": "Telegram chat ID", "type": "text", "placeholder": "Se llena automático con el bot"}, {"name": "timezone", "label": "Zona horaria", "type": "text", "value": "America/Mexico_City"}], "vaccinations": [{"vaccine_name": "Múltiple canina", "label": "Múltiple canina"}, {"vaccine_name": "Rabia", "label": "Rabia"}, {"vaccine_name": "Bordetella", "label": "Bordetella"}, {"vaccine_name": "Desparasitación", "label": "Desparasitación"}], "avatar_image": "../assets/images/profile.webp", "lang": "es", "telegram_link": {"enabled": true, "bot_username": "Linktree_palomitas_neurofit_bot", "start_param": "castana", "label": "Conectar Telegram", "helper": "Abre Telegram con este botón para enlazar automáticamente este chat a los recordatorios de Castaña."}, "labels": {"back_label": "Ver perfil público", "panel_label": "Espacio privado", "hero_note": "Completa datos veterinarios, contactos y recordatorios de Castaña.", "access_title": "Acceso familia", "access_intro": "Escribe el password autorizado para modificar los datos privados de Castaña.", "password_label": "Password", "login_button": "Entrar", "profile_title": "Información a confirmar", "save_profile_button": "Guardar datos", "contact_title": "Contacto y Telegram", "telegram_enabled_label": "Activar recordatorios Telegram", "vaccines_title": "Vacunas", "vaccines_intro": "La próxima fecha activa los recordatorios privados por Telegram.", "save_vaccines_button": "Guardar vacunas", "vaccine_fields": {"administered_on": "Fecha aplicada", "next_due_on": "Próxima fecha", "veterinarian": "Veterinario", "clinic": "Clínica", "lot": "Lote", "is_public": "Mostrar en el perfil público", "private_notes": "Notas privadas"}, "status": {"validating": "Validando acceso...", "invalid_password": "Password incorrecto.", "validation_error": "No se pudo validar el acceso.", "saving_profile": "Guardando datos...", "profile_saved": "Datos guardados.", "profile_error": "No se pudieron guardar los datos.", "saving_vaccines": "Guardando vacunas...", "vaccines_saved": "Vacunas guardadas.", "vaccines_error": "No se pudieron guardar las vacunas."}}, "default_timezone": "America/Mexico_City"}</script>
+  <script src="../../assets/js/pet-owner-admin.js"></script>
+</body>
+</html>
+
+
