@@ -1,0 +1,278 @@
+.layout-neurofit {
+  color: #f4f6fa;
+  background: radial-gradient(ellipse at 25% 0%, #111a23, #08090b 56%);
+}
+
+.layout-neurofit .page {
+  display: grid;
+  align-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  max-width: 1000px;
+  padding: clamp(20px, 5vw, 48px);
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+
+.layout-neurofit .footer {
+  display: none;
+}
+
+.nf-matrix {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  pointer-events: none;
+  color: #57e5fc;
+  font: 500 clamp(.8rem, 1.3vw, 1rem)/1.85 ui-monospace, Consolas, monospace;
+  text-align: center;
+  mask-image: linear-gradient(transparent, #000 12%, #000 86%, transparent);
+}
+
+.nf-matrix span {
+  width: 2ch;
+  opacity: .34;
+  animation: nf-matrix-fall 19s linear infinite;
+  animation-delay: -8s;
+}
+
+.nf-matrix span:nth-child(3n + 1) {
+  opacity: .22;
+  animation-duration: 23s;
+  animation-delay: -15s;
+}
+
+.nf-matrix span:nth-child(3n + 2) {
+  animation-duration: 17s;
+  animation-delay: -3s;
+}
+
+@keyframes nf-matrix-fall {
+  from { transform: translateY(-12rem); }
+  to { transform: translateY(100vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nf-matrix span {
+    animation: none;
+    transform: translateY(12vh);
+  }
+
+  .nf-matrix span:nth-child(even) {
+    transform: translateY(65vh);
+  }
+}
+
+.nf-profile {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 62px);
+  padding: clamp(24px, 6vw, 58px);
+  text-align: left;
+  border: 1px solid #252c34;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #101317, #0b0d10 65%);
+  box-shadow: 0 28px 90px #0008;
+}
+
+.nf-brand {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #252c34;
+}
+
+.nf-mark {
+  position: relative;
+  overflow: hidden;
+  width: 30px;
+  height: 32px;
+}
+
+.nf-mark img {
+  position: absolute;
+  width: 146px;
+  max-width: none;
+  top: -5px;
+  left: -3px;
+}
+
+.nf-brand-name {
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.nf-brand-line {
+  margin-left: auto;
+  color: #aeb8c5;
+  font-size: .875rem;
+}
+
+.nf-portrait {
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  position: relative;
+  justify-self: center;
+  border-radius: 50%;
+  box-shadow: 0 0 42px #17bcd01f;
+  background: #206173;
+}
+
+.nf-photo {
+  position: absolute;
+  inset: 3px;
+  border-radius: inherit;
+  background: #000;
+  overflow: hidden;
+}
+
+.nf-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(1.08);
+}
+
+.nf-orbit {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from -30deg, transparent 0 71%, #27c6fa33 84%, #37dafc 96%, #effdff 99%, transparent 100%);
+  mask-image: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  pointer-events: none;
+}
+
+.nf-info h1 {
+  margin: 0;
+  font-size: clamp(2.45rem, 5.8vw, 4.8rem);
+  line-height: .98;
+  font-weight: 650;
+  letter-spacing: -.065em;
+}
+
+.nf-role {
+  color: #7ae9ff;
+  margin: 18px 0 0;
+  font-size: clamp(1rem, 2.3vw, 1.3rem);
+}
+
+.nf-links {
+  display: grid;
+  justify-items: stretch;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.nf-link {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border: 1px solid #a2f3ffb3;
+  border-radius: 10px;
+  background: linear-gradient(155deg, #c2f8ffed, #70e6f8e6);
+  box-shadow: inset 0 1px 0 #fff6, 0 5px 16px #0003;
+  color: #041519;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nf-link--primary:hover {
+  background: linear-gradient(155deg, #defcff, #9df0fc);
+}
+
+.nf-link--secondary {
+  border-color: #a7d6e648;
+  background: linear-gradient(155deg, #9ec8de25, #1b30384d);
+  color: #f4f6fa;
+}
+
+.nf-link--secondary:hover {
+  border-color: #76e9f8;
+}
+
+.nf-link,
+.nf-whatsapp {
+  text-align: center;
+}
+
+.nf-whatsapp {
+  position: fixed;
+  z-index: 2;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid #66ca9480;
+  border-radius: 999px;
+  background: linear-gradient(155deg, #23513aef, #10291df0);
+  box-shadow: inset 0 1px 0 #d9ffea38, 0 5px 16px #0004;
+  color: #d9ffea;
+  text-decoration: none;
+  font-weight: 650;
+}
+
+.nf-whatsapp:hover {
+  background: #19422f;
+}
+
+.nf-link:focus-visible,
+.nf-whatsapp:focus-visible {
+  outline: 2px solid #f4f6fa;
+  outline-offset: 4px;
+}
+
+@media (max-width: 660px) {
+  .layout-neurofit .page {
+    padding-inline: 16px;
+  }
+
+  .nf-matrix {
+    font-size: .92rem;
+    mask-image: linear-gradient(transparent, #000 7%, #000 94%, transparent);
+  }
+
+  .nf-matrix span {
+    opacity: .52;
+  }
+
+  .nf-matrix span:nth-child(3n + 1) {
+    opacity: .37;
+  }
+
+  .nf-matrix span:nth-child(n + 9) {
+    display: none;
+  }
+
+  .nf-profile {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+    background: linear-gradient(145deg, #101317c2, #0b0d10db 65%);
+  }
+
+  .nf-brand {
+    justify-content: center;
+  }
+
+  .nf-brand-line {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+
+  .nf-portrait {
+    max-width: 215px;
+  }
+
+}
+
